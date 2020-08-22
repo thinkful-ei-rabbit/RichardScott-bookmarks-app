@@ -1,8 +1,9 @@
-import api from './api';
 import $ from 'jquery';
+
+import api from './api';
 import store from './store';
-import bookmarkOpen from './src/images/bookmark-closed.png';
-import bookmarkClosed from './src/images/bookmark-open.png';
+import bookmarkOpen from './images/bookmarkClosed.png';
+import bookmarkClosed from './images/bookmarkOpen.png'; 
 
 const generateBookmarkList = function (bookmark) {
   if (bookmark.rating >= store.showRating) {
@@ -12,7 +13,11 @@ const generateBookmarkList = function (bookmark) {
         <section class='edit-form'>
           <form id='saveNewBookmark'>
             <div class="bookmark-in-list" data-bookmark-id="${bookmark.id}">
-              <input class='edit-title' name='title' autofocus required value='${bookmark.title}' placeholder='${bookmark.title}...'></input>            </div>
+              <input class='edit-title' maxlength='10' name='title' autofocus required value='${bookmark.title}' placeholder='${bookmark.title}...'></input>
+              <div class='edi-cancel-button'>
+                <button id='edit-cancel' class='cancel editButtons'>X</button>
+              </div>
+            </div>
             <div class="dropdown-content">
               <p><b>Vist:</b><input type='url' name='url' id='url' required value='${bookmark.url}' placeholder='${bookmark.url}'></input></p>
               <p><b>Description:</b><textarea minlength='1' name='desc' id='desc' placeholder='${bookmark.desc}'>${bookmark.desc}</textarea></p>
@@ -60,14 +65,14 @@ const generateBookmarkList = function (bookmark) {
       </div>`;
     } else if (bookmark.expanded === false) {
       return `
-      <div class="bookmarks-full-list fade-in">
+      <div class="bookmarks-full-list">
         <div class="bookmark-in-list" data-bookmark-id="${bookmark.id}">
           <img src='${bookmarkOpen}' class='banner-image' alt='A tiny book.'><span class='title-button' tabindex='0'>${bookmark.title}</span><span class='title-rating'>${store.stars[bookmark.rating - 1]}</span>
         </div>
       </div>`;
     } else {
       return `
-      <div class="bookmarks-full-list fade-in">
+      <div class="bookmarks-full-list">
         <div class="bookmark-in-list" data-bookmark-id="${bookmark.id}">
           <img src='${bookmarkClosed}' class='banner-image' alt='A tiny book.'><span class='title-button' tabindex='0'>${bookmark.title}</span><span class='title-rating'> ${store.stars[bookmark.rating - 1]}</span>
         </div>
@@ -90,7 +95,7 @@ const generateAddForm = function () {
   </div>
     <form class='newBookmark' id='newBookmark'>
       <label for='title'><b>Title: </b></label>
-      <input type='text' name='title' id='title' required></input><br><br>
+      <input type='text' maxlength='10' name='title' id='title' required></input><br><br>
       <label for='url'><b>Url: </b></label>
       <input type='url' name='url' id='url' required></input><br><br>
       <label for='desc'>Description: </label><br>
@@ -180,10 +185,10 @@ const expandBookMark = function () {
     let foundBookmark = store.findById(foundID.bookmarkId);
     if (foundBookmark.editing === true) {
       return;
-    }
-    if (foundBookmark.expanded === false) {
+    } else if (foundBookmark.expanded === false) {
       foundBookmark.expanded = true;
       render();
+      foundBookmark.expanded = false;
     } else {
       foundBookmark.expanded = false;
       render();
@@ -204,8 +209,7 @@ const expandBookMarkByKeypress = function () {
       let foundBookmark = store.findById(foundID.bookmarkId);
       if (foundBookmark.editing === true) {
         return;
-      }
-      if (foundBookmark.expanded === false) {
+      } else if (foundBookmark.expanded === false) {
         foundBookmark.expanded = true;
         render();
         foundBookmark.expanded = false;
@@ -258,10 +262,7 @@ const submitEditBookmark = function () {
     api
       .editBookmarkToApi(foundID.bookmarkId, bookmarkJSONbody)
       .then(function () {
-        let bookmark = store.updateBookmarkToStore(
-          foundID.bookmarkId,
-          editedBookmark
-        );
+        let bookmark = store.updateBookmarkToStore(foundID.bookmarkId, editedBookmark);
         bookmark.expanded = false;
         bookmark.editing = false;
         render();
@@ -276,10 +277,25 @@ const submitEditBookmark = function () {
 
 const cancelNewBookmark = function () {
   $('main').on('click', '#cancel', function () {
+    event.preventDefault();
     store.adding = false;
     render();
   });
 };
+
+const cancelEditBookmark = function () {
+  $('main').on('click', '#edit-cancel', function () {
+    let foundID = $(event.target)
+      .parent()
+      .parent()
+      .data();
+    let bookmark = store.findById(foundID.bookmarkId);
+    bookmark.expanded = false;
+    bookmark.editing = false;
+    render();
+  });
+};
+
 
 const editBookmark = function () {
   $('main').on('click', '#edit', function (event) {
@@ -292,7 +308,6 @@ const editBookmark = function () {
     let foundBookmark = store.findById(foundID.bookmarkId);
     foundBookmark.editing = true;
     render();
-    foundBookmark.editing = false;
   });
 };
 
@@ -356,6 +371,7 @@ const bindEventListeners = function () {
   deleteBookmark();
   ratingsSelect();
   handleCloseError();
+  cancelEditBookmark();
 };
 
 export default {
