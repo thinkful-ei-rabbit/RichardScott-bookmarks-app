@@ -1,0 +1,348 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-image: url('/src/images/openbook-bg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-position-y: 96%;
+  background-size: 300px;
+}
+
+main {
+  width: 100%;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 20px;
+  font-family: Georgia, serif;
+}
+
+.banner-image {
+  width: 5%;
+  margin: 0px;
+  padding: 0px;
+  opacity: 0.7;
+}
+
+.logo {
+  text-align: Left;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+  font-size: 26px;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
+.stars {
+  width: 8%;
+}
+
+.yellow {
+  color: #ffaa56;
+}
+
+.error-log {
+  color: red;
+}
+
+.brilliant-bookmarks-container {
+  width: 125px;
+  display: flex;
+  justify-content: left;
+  border-left: rgb(201, 201, 201) solid 1px;
+  border-radius: 5%;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-left: 4px;
+}
+
+.buttons-container {
+  background-color: white;
+}
+
+.main-bookmark-styling {
+  width: 100%;
+  height: 400px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: rgb(240, 240, 240) solid 1px;
+  box-shadow: 0px 1px 3px 1px rgb(199, 199, 199);
+  padding: 4px;
+  background-color: rgb(253, 253, 253);
+  opacity: 0.9;
+}
+
+.bookmarks-full-list {
+  background-color: #ffc081;
+}
+
+.bookmark-in-list {
+  flex-wrap: nowrap;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: solid rgb(56, 56, 56) 1px;
+  border-radius: 1%;
+  padding: 13px;
+  margin: 4px 4px 0px 4px;
+  background-color: white;
+}
+
+.title-button {
+  margin-left: 10px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 2px 0px 2px;
+  padding: 10px;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+}
+
+select {
+  height: 26px;
+  font-weight: 600;
+  align-self: center;
+  background-color: #fffaf6;
+}
+
+.title-rating {
+  text-align: right;
+}
+
+.dropdown-content {
+  padding: 18px;
+  font-size: 18px;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+  background-color: white;
+}
+
+.dropdown-text {
+  font-weight: bold;
+}
+
+.create-form {
+  font-size: 20px;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+}
+
+.edit-form {
+  font-size: 20px;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+}
+
+.cancel-button {
+  text-align: right;
+  margin: 5px;
+}
+
+input[type='text'] {
+  border: solid 1px rgb(173, 173, 173);
+  padding: 3px;
+  width: 98%;
+}
+
+textarea {
+  border: solid 1px rgb(173, 173, 173);
+  padding: 3px;
+  width: 98%;
+}
+
+input[type='url'] {
+  border: solid 1px rgb(173, 173, 173);
+  padding: 3px;
+  width: 98%;
+}
+
+.ratings-container {
+  text-align: center;
+}
+
+/* Star Button Styling */
+
+.rating {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color: #000;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color: #fda650;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px #09f;
+}
+
+.new-button-container {
+  text-align: center;
+  margin: 20px;
+}
+
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: white; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #ffebd7; 
+  opacity: .2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(109, 109, 109); 
+}
+
+/* Button Styling */
+
+.newButton {
+  box-shadow: 1px 11px 14px -7px #a6a6a6;
+  background: linear-gradient(to bottom, #ffc081 5%, #ffaa56 100%);
+  background-color: #ffcd9a;
+  border-radius: 10px;
+  border: 1px solid #ffd5a8;
+  display: inline-block;
+  cursor: pointer;
+  color: #0f0f0f;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 36px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #000000;
+}
+.newButton:hover {
+  background: linear-gradient(to bottom, #ffc081 5%, #ff972f 100%);
+  background-color: #ffaa56;
+}
+.newButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.editButtons {
+  box-shadow: 3px -15px 2px -36px #000000;
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #949494;
+  display: inline-block;
+  cursor: pointer;
+  color: #444444;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 7px;
+  text-decoration: none;
+  text-shadow: -9px 0px 4px #ffffff;
+  margin: 2px;
+}
+.editButtons:hover {
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+  background-color: #f6f6f6;
+}
+.editButtons:active {
+  position: relative;
+  top: 1px;
+}
+
+/* Link psuedo elements */
+
+a:link {
+  color: #ff962c;
+}
+
+a:visited {
+  color: #ffa246;
+}
+
+a:hover {
+  color: #e77503;
+}
+
+a:active {
+  color: #ffaa56;
+}
+
+/* Media Query */
+
+@media screen and (min-width: 480px) {
+  main {
+    width: 400px;
+  }
+
+  body {
+    background-size: 310px;
+    background-position-y: 90%;
+  }
+}
