@@ -34,7 +34,7 @@ I can select from a dropdown (a <select> element) a "minimum rating" to filter t
 
 #### UPDATE ####
 
-So after a wild night of confusion, I saw my error today was in the file path of the imported images. I included /src/ in the path. I also did not know this would consequently break all of the other modules and cause nothing to work. I wrongly assumed it was from webpack not deploying correctly and spent about 4 hours trouble shooting that. 
+So after a wild night of confusion, I saw my error today was in the file path of the imported images. I included /src/ in the path. I tried the path without src, but did not include the ./ before so I moved on. I also did not know this would consequently break all of the other modules and cause nothing to work. I wrongly assumed it was from webpack not deploying correctly and spent about 4 hours trouble shooting that. 
 
 I managed to upload the bundle to gh-pages as requested, and I updated the master branch to include the unbundled files.
 Whew.
