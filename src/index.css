@@ -1,7 +1,7 @@
 body {
   display: flex;
   justify-content: center;
-  background-image: url('/src/images/openbook-bg.png');
+  background-image: url('./images/openbook-bg.png'); 
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom;
@@ -20,7 +20,7 @@ h2 {
 }
 
 .banner-image {
-  width: 5%;
+  width: 7%;
   margin: 0px;
   padding: 0px;
   opacity: 0.7;
@@ -28,15 +28,14 @@ h2 {
 
 .logo {
   text-align: Left;
-  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
-    sans-serif;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 26px;
   font-weight: bolder;
   margin-left: 10px;
 }
 
 .stars {
-  width: 8%;
+  width: 18%;
 }
 
 .yellow {
@@ -80,12 +79,8 @@ h2 {
 }
 
 .bookmark-in-list {
-  flex-wrap: nowrap;
-  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
-    sans-serif;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 600;
-  display: flex;
-  justify-content: space-between;
   width: 98%;
   font-size: 20px;
   box-sizing: border-box;
@@ -94,10 +89,13 @@ h2 {
   padding: 13px;
   margin: 4px 4px 0px 4px;
   background-color: white;
+  display: flex;
+  justify-content: left;
 }
 
 .title-button {
-  margin-left: 10px;
+  flex: 1;
+  margin-left: 100px;
 }
 
 .top-bar {
@@ -105,8 +103,7 @@ h2 {
   justify-content: space-between;
   margin: 0px 2px 0px 2px;
   padding: 10px;
-  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
-    sans-serif;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 select {
@@ -118,13 +115,13 @@ select {
 
 .title-rating {
   text-align: right;
+  flex: 1;
 }
 
 .dropdown-content {
   padding: 18px;
   font-size: 18px;
-  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
-    sans-serif;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: white;
 }
 
@@ -134,14 +131,12 @@ select {
 
 .create-form {
   font-size: 20px;
-  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
-    sans-serif;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .edit-form {
   font-size: 20px;
-  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold',
-    sans-serif;
+  font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .cancel-button {
