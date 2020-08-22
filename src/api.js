@@ -7,7 +7,6 @@ const BASE_URL = 'https://thinkful-list-api.herokuapp.com/richardscott';
  * @returns {Promise} 
  */
 const fetchApi = function (...args) {
-
   let error;
   return fetch(...args)
     .then((res) => {
