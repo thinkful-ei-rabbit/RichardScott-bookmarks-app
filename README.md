@@ -30,8 +30,6 @@ I can remove bookmarks from my bookmark list
 I can select from a dropdown (a <select> element) a "minimum rating" to filter the list by all bookmarks rated at or above the chosen selection
 
 (Extension feature - optional) I can edit the rating and description of a bookmark in my list
-
-
 #### UPDATE ####
 
 So after a wild night of confusion, I saw my error today was in the file path of the imported images. I included /src/ in the path. I tried the path without src, but did not include the ./ before so I moved on. I also did not know this would consequently break all of the other modules and cause nothing to work. I wrongly assumed it was from webpack not deploying correctly and spent about 4 hours trouble shooting that. 
