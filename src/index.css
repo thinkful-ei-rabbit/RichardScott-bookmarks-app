@@ -5,7 +5,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom;
-  background-position-y: 96%;
   background-size: 300px;
 }
 
@@ -52,7 +51,7 @@ h2 {
   justify-content: left;
   border-left: rgb(201, 201, 201) solid 1px;
   border-radius: 5%;
-  margin-bottom: 40px;
+  margin-bottom: 22px;
   margin-top: 10px;
   margin-left: 4px;
 }
@@ -101,7 +100,7 @@ h2 {
 .top-bar {
   display: flex;
   justify-content: space-between;
-  margin: 0px 2px 0px 2px;
+  margin: 0px 0px 0px 2px;
   padding: 10px;
   font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
