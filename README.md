@@ -1,4 +1,4 @@
-# RichardScott-bookmarks-app
+# https://thinkful-ei-rabbit.github.io/RichardScott-bookmarks-app/
 
 I completed the assignment and spent a lot of time on this. Unforunately, the passed few hours I could not resolve a webpack bundling error.
 I do not know what to do. I've uninstalled node and webpack and reinstalled them. It will not bundle images and it doesn't recognize simple jaavscript modules now.
