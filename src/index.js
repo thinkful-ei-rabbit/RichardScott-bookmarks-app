@@ -1,9 +1,11 @@
 import $ from 'jquery';
+
+import './index.css';
+import 'normalize.css';
+
 import api from './api';
 import bookmarkList from './bookmarkList';
 import store from './store';
-import './index.css';
-import 'normalize.css';
 
 const main = function () {
   api.getList().then((bookmarks) => {
