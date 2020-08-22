@@ -1,5 +1,4 @@
-import store from './store';
-import starburst from './src/images/starburst.png';
+import starburst from './images/starburst.png';
 
 let bookmarks = [];
 let error = null;
@@ -18,7 +17,7 @@ const addBookmarkToStore = function (bookmark) {
 };
 
 const findById = function (id) {
-  return store.bookmarks.find((bookmark) => id === bookmark.id);
+  return bookmarks.find((bookmark) => id === bookmark.id);
 };
 
 const updateBookmarkToStore = function (id, newBookmark) {
@@ -27,10 +26,10 @@ const updateBookmarkToStore = function (id, newBookmark) {
 };
 
 const deleteBookmarkFromStore = function (id) {
-  let bookmarkIndex = store.bookmarks.findIndex(
+  let bookmarkIndex = bookmarks.findIndex(
     (bookmark) => bookmark.id === id
   );
-  store.bookmarks.splice(bookmarkIndex, 1);
+  bookmarks.splice(bookmarkIndex, 1);
 };
 
 const setError = function (error) {
