@@ -7,7 +7,6 @@ It was working completely fine up to a few hours ago. I'm at a huge loss as the 
 I've uploaded the files but since it will not bundle I cannot present a live link.
 I will also upload screenshots of the errors I've received.
 
-
 I completed all of the necessary user stories below:
 
 1. I can add bookmarks to my bookmark list. Bookmarks contain:
@@ -31,3 +30,13 @@ I can remove bookmarks from my bookmark list
 I can select from a dropdown (a <select> element) a "minimum rating" to filter the list by all bookmarks rated at or above the chosen selection
 
 (Extension feature - optional) I can edit the rating and description of a bookmark in my list
+
+
+#### UPDATE ####
+
+So after a wild night of confusion, I saw my error today was in the file path of the imported images. I included /src/ in the path. I also did not know this would consequently break all of the other modules and cause nothing to work. I wrongly assumed it was from webpack not deploying correctly and spent about 4 hours trouble shooting that. 
+
+I managed to upload the bundle to gh-pages as requested, and I updated the master branch to include the unbundled files.
+Whew.
+Cheers
+##########################
