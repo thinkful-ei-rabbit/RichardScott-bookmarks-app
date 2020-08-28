@@ -18,8 +18,20 @@ h2 {
   font-family: Georgia, serif;
 }
 
+ul {
+  display: block;
+  list-style-type: none;
+  margin-top: 0em;
+  margin-bottom: 0 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0px;
+}
+
+
 .banner-image {
-  width: 7%;
+  width: 35px;
+  height: 35px;
   margin: 0px;
   padding: 0px;
   opacity: 0.7;
@@ -34,15 +46,28 @@ h2 {
 }
 
 .stars {
-  width: 18%;
+  width: 20%;
 }
 
 .yellow {
   color: #ffaa56;
 }
 
-.error-log {
-  color: red;
+.error-message {
+  color: rgb(255, 56, 56);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 12px;
+  padding: 4px;
+  box-shadow: 0px 1px 3px 1px rgb(199, 199, 199);
+
+}
+
+.hidden {
+  display: none;
 }
 
 .brilliant-bookmarks-container {
@@ -57,10 +82,12 @@ h2 {
 }
 
 .buttons-container {
+  text-align: center;
   background-color: white;
+  margin-bottom: 10px;
 }
 
-.main-bookmark-styling {
+.main-bookmark-container {
   width: 100%;
   height: 400px;
   box-sizing: border-box;
@@ -73,7 +100,7 @@ h2 {
   opacity: 0.9;
 }
 
-.bookmarks-full-list {
+.bookmark {
   background-color: #ffc081;
 }
 
@@ -81,7 +108,7 @@ h2 {
   font-family: Playfair Display, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 600;
   width: 98%;
-  font-size: 20px;
+  font-size: 22px;
   box-sizing: border-box;
   border: solid rgb(56, 56, 56) 1px;
   border-radius: 1%;
@@ -89,12 +116,8 @@ h2 {
   margin: 4px 4px 0px 4px;
   background-color: white;
   display: flex;
-  justify-content: left;
-}
-
-.title-button {
-  flex: 1;
-  margin-left: 100px;
+  justify-content: space-evenly;
+  overflow-wrap: anywhere;
 }
 
 .top-bar {
@@ -115,7 +138,14 @@ select {
 .title-rating {
   text-align: right;
   flex: 1;
+  width: 10px;
 }
+
+ .title-button {
+   margin: 0px 15px 0px 15px;
+   width: 155px;
+   text-align: center;
+ }
 
 .dropdown-content {
   padding: 18px;
@@ -141,6 +171,10 @@ select {
 .cancel-button {
   text-align: right;
   margin: 5px;
+}
+
+.smaller {
+  font-size: 14px;
 }
 
 input[type='text'] {
@@ -332,11 +366,21 @@ a:active {
 
 @media screen and (min-width: 480px) {
   main {
-    width: 400px;
+    width: 440px;
   }
 
   body {
     background-size: 310px;
     background-position-y: 90%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .stars {
+    width: 13px;
+  }
+  
+  .title-rating {
+    text-align: center;
   }
 }
