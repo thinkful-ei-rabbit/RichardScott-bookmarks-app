@@ -8,6 +8,7 @@ import bookmarkList from './bookmarkList';
 import store from './store';
 
 const main = function () {
+  $('main').html(bookmarkList.generateMain());
   api.getList().then((bookmarks) => {
     bookmarks.forEach((bookmark) => store.addBookmarkToStore(bookmark));
     bookmarks.forEach((bookmark) => (bookmark.expanded = false));
