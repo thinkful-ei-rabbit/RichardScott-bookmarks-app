@@ -1,7 +1,7 @@
 # Bookmark App
 
 
-Utilizes `HTML, CSS, JAVASCRIPT, JQUERY, and AJAX` to access and update an API with your favorite bookmarks.
+Utilizes `HTML, CSS, JAVASCRIPT, JQUERY, and AJAX` to access and update an API with your favorite bookmarks using appropriate HTTP methods.
 
 
 ## Live Link: [ https://thinkful-ei-rabbit.github.io/RichardScott-bookmarks-app/](https://thinkful-ei-rabbit.github.io/RichardScott-bookmarks-app/ " https://thinkful-ei-rabbit.github.io/RichardScott-bookmarks-app/")
